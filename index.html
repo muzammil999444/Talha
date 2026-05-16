@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>💍 Mubarak Ho — Talha Ishfaq</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Noto+Nastaliq+Urdu:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg:    #04071a;
+  --royal: #1a2a8a;
+  --gold:  #f0c040;
+  --gold2: #ffd97d;
+  --white: #f8f4ea;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--white);font-family:'Cormorant Garamond',serif;overflow-x:hidden;}
+
+/* CSS star bg — no canvas, zero JS cost */
+body::before{
+  content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(1px 1px at 8%  12%,rgba(255,255,255,.7) 0%,transparent 100%),
+    radial-gradient(1px 1px at 22% 38%,rgba(240,192,64,.6)  0%,transparent 100%),
+    radial-gradient(1px 1px at 35%  6%,rgba(255,255,255,.6) 0%,transparent 100%),
+    radial-gradient(1px 1px at 52% 28%,rgba(240,192,64,.5)  0%,transparent 100%),
+    radial-gradient(1px 1px at 67% 10%,rgba(255,255,255,.7) 0%,transparent 100%),
+    radial-gradient(1px 1px at 80% 52%,rgba(240,192,64,.55) 0%,transparent 100%),
+    radial-gradient(1px 1px at 90% 20%,rgba(255,255,255,.6) 0%,transparent 100%),
+    radial-gradient(1px 1px at 14% 68%,rgba(255,255,255,.5) 0%,transparent 100%),
+    radial-gradient(1px 1px at 46% 76%,rgba(240,192,64,.5)  0%,transparent 100%),
+    radial-gradient(1px 1px at 63% 86%,rgba(255,255,255,.6) 0%,transparent 100%),
+    radial-gradient(1px 1px at 86% 78%,rgba(240,192,64,.45) 0%,transparent 100%),
+    radial-gradient(1px 1px at 4%  88%,rgba(255,255,255,.6) 0%,transparent 100%),
+    radial-gradient(1px 1px at 28% 93%,rgba(240,192,64,.45) 0%,transparent 100%),
+    radial-gradient(1px 1px at 73% 63%,rgba(255,255,255,.5) 0%,transparent 100%),
+    radial-gradient(1px 1px at 18% 48%,rgba(240,192,64,.35) 0%,transparent 100%),
+    radial-gradient(1px 1px at 58% 48%,rgba(255,255,255,.4) 0%,transparent 100%);
+  animation:twinkle 7s ease-in-out infinite alternate;
+}
+@keyframes twinkle{0%{opacity:.45}100%{opacity:1}}
+
+/* FLOATS */
+.floats{position:fixed;inset:0;z-index:1;pointer-events:none;overflow:hidden;}
+.f{position:absolute;animation:riseUp linear infinite;will-change:transform;}
+@keyframes riseUp{
+  0%  {transform:translateY(105vh) rotate(0deg);  opacity:0;}
+  6%  {opacity:.85;}
+  94% {opacity:.65;}
+  100%{transform:translateY(-12vh) rotate(560deg);opacity:0;}
+}
+
+/* SPLASH */
+#splash{
+  position:fixed;inset:0;z-index:9999;
+  background:radial-gradient(ellipse at 50% 45%,#1a2a8a,#04071a 72%);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  transition:opacity 1s ease,visibility 1s;
+}
+#splash.out{opacity:0;visibility:hidden;pointer-events:none;}
+.sp-rings{position:relative;width:210px;height:112px;margin-bottom:26px;}
+.sp-ring{
+  position:absolute;top:6px;width:94px;height:94px;border-radius:50%;
+  border:7px solid var(--gold);
+  box-shadow:0 0 22px var(--gold),0 0 48px rgba(184,134,11,.38);
+}
+.sp-ring.L{animation:sL 1.4s cubic-bezier(.22,1,.36,1) forwards;}
+.sp-ring.R{animation:sR 1.4s cubic-bezier(.22,1,.36,1) forwards;}
+@keyframes sL{from{left:-120px;opacity:0}to{left:15px;opacity:1}}
+@keyframes sR{from{right:-120px;opacity:0}to{right:15px;opacity:1}}
+.sp-gem{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:1.5rem;animation:fadeIn .5s ease 1.5s both;}
+.sp-title{
+  font-family:'Cinzel Decorative',cursive;
+  font-size:clamp(2rem,5vw,3.2rem);
+  background:linear-gradient(135deg,var(--gold2),var(--gold),#b8860b);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  animation:fadeInUp .7s ease 1.4s both;
+  filter:drop-shadow(0 0 18px rgba(240,192,64,.4));letter-spacing:3px;
+}
+.sp-ur{font-family:'Noto Nastaliq Urdu',serif;font-size:1.35rem;color:rgba(248,244,234,.82);direction:rtl;margin-top:10px;animation:fadeInUp .7s ease 1.7s both;}
+.sp-bar{width:0;height:2px;margin-top:24px;border-radius:2px;background:linear-gradient(to right,transparent,var(--gold),transparent);animation:barW 1s ease 2s forwards;}
+@keyframes barW{to{width:230px;}}
+
+/* BISMILLAH */
+.bism{position:relative;z-index:3;text-align:center;padding:24px 20px 17px;border-bottom:1px solid rgba(240,192,64,.11);}
+.bism-t{font-family:'Noto Nastaliq Urdu',serif;font-size:clamp(1.4rem,3.5vw,2.1rem);color:var(--gold2);direction:rtl;text-shadow:0 0 22px rgba(240,192,64,.38);animation:glow 3s ease-in-out infinite alternate;}
+
+/* HERO */
+#hero{
+  position:relative;z-index:3;min-height:100vh;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:60px 20px;
+  background:
+    radial-gradient(ellipse at 30% 25%,rgba(61,90,254,.13) 0%,transparent 55%),
+    radial-gradient(ellipse at 70% 75%,rgba(26,42,138,.18) 0%,transparent 55%);
+}
+.h-badge{font-family:'Cinzel Decorative',cursive;font-size:.6rem;letter-spacing:6px;color:var(--gold);opacity:.62;animation:fadeIn 1s ease 3.2s both;}
+.h-mubarak{font-family:'Noto Nastaliq Urdu',serif;font-size:clamp(2rem,5.5vw,3.6rem);color:var(--gold2);direction:rtl;text-shadow:0 0 32px rgba(240,192,64,.52);animation:fadeInDown .8s ease 3.3s both,glow 4s ease-in-out infinite alternate;margin-top:11px;}
+.h-sep{display:flex;align-items:center;gap:14px;margin:15px 0;animation:fadeIn .8s ease 3.5s both;}
+.h-line{width:68px;height:1px;background:linear-gradient(to right,transparent,var(--gold));}
+.h-line.r{background:linear-gradient(to left,transparent,var(--gold));}
+.h-name{
+  font-family:'Cinzel Decorative',cursive;
+  font-size:clamp(1.9rem,7vw,4.8rem);font-weight:700;
+  background:linear-gradient(135deg,var(--gold2) 0%,var(--gold) 40%,#fff8dc 60%,var(--gold) 80%,#b8860b 100%);
+  background-size:200%;
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  filter:drop-shadow(0 3px 16px rgba(240,192,64,.42));line-height:1.2;
+  animation:fadeInUp .8s ease 3.6s both,shimmer 5s linear infinite;
+}
+@keyframes shimmer{0%{background-position:0%}100%{background-position:200%}}
+.h-amp{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.2rem,3.5vw,2rem);color:rgba(255,255,255,.42);display:block;margin:2px 0;animation:fadeIn .7s ease 3.8s both;}
+.h-date-pill{
+  margin-top:26px;display:inline-flex;align-items:center;gap:10px;padding:10px 30px;
+  border:1.5px solid rgba(240,192,64,.42);border-radius:60px;
+  background:rgba(26,42,138,.26);backdrop-filter:blur(8px);
+  animation:fadeInUp .8s ease 4s both;box-shadow:0 0 22px rgba(240,192,64,.07);
+}
+.h-date-t{font-family:'Cinzel Decorative',cursive;font-size:clamp(.58rem,1.4vw,.82rem);color:var(--gold2);letter-spacing:3px;}
+.h-rings{margin-top:22px;animation:fadeIn .8s ease 4.3s both,float 4s ease-in-out infinite;}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+.h-scroll{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:5px;animation:fadeIn 1s ease 4.8s both;color:rgba(255,255,255,.28);font-family:'Cinzel Decorative',cursive;font-size:.5rem;letter-spacing:4px;}
+.arr{width:15px;height:15px;border-right:1.5px solid rgba(240,192,64,.32);border-bottom:1.5px solid rgba(240,192,64,.32);transform:rotate(45deg);animation:ab 2s ease-in-out infinite;}
+.arr:nth-child(2){animation-delay:.18s;}.arr:nth-child(3){animation-delay:.36s;}
+@keyframes ab{0%,100%{opacity:.2}50%{opacity:.8}}
+
+/* SECTIONS */
+section{position:relative;z-index:3;padding:80px 22px;}
+.ey{font-family:'Cinzel Decorative',cursive;font-size:.6rem;letter-spacing:6px;color:var(--gold);opacity:.6;text-align:center;margin-bottom:10px;}
+.st{font-family:'Cinzel Decorative',cursive;font-size:clamp(1.3rem,3.5vw,2.2rem);background:linear-gradient(135deg,var(--gold2),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-align:center;filter:drop-shadow(0 0 14px rgba(240,192,64,.22));}
+.st-ur{font-family:'Noto Nastaliq Urdu',serif;font-size:clamp(1.5rem,3.5vw,2.4rem);color:var(--gold2);text-align:center;direction:rtl;text-shadow:0 0 18px rgba(240,192,64,.32);}
+.div{width:145px;height:1px;margin:17px auto 46px;background:linear-gradient(to right,transparent,var(--gold),transparent);position:relative;}
+.div::before{content:'✦';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:var(--gold);font-size:.72rem;background:var(--bg);padding:0 7px;}
+
+/* DUAS */
+#duas{background:linear-gradient(180deg,transparent,rgba(26,42,138,.09) 50%,transparent);}
+.duas-g{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;max-width:1000px;margin:0 auto;}
+.dc{
+  background:linear-gradient(135deg,rgba(26,42,138,.48),rgba(61,90,254,.11));
+  border:1px solid rgba(240,192,64,.2);border-radius:20px;padding:30px 24px;
+  text-align:right;direction:rtl;backdrop-filter:blur(10px);
+  transition:transform .35s ease,box-shadow .35s,border-color .35s;
+  box-shadow:0 6px 26px rgba(0,0,0,.28);position:relative;overflow:hidden;
+}
+.dc::after{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(240,192,64,.04),transparent);animation:cs 6s ease-in-out infinite;}
+@keyframes cs{0%{left:-100%}100%{left:200%}}
+.dc:hover{transform:translateY(-10px);box-shadow:0 18px 45px rgba(240,192,64,.16);border-color:rgba(240,192,64,.48);}
+.dc-icon{font-size:1.9rem;display:block;text-align:center;margin-bottom:14px;}
+.dc-txt{font-family:'Noto Nastaliq Urdu',serif;font-size:1.03rem;line-height:2.1;color:rgba(248,244,234,.87);}
+.dc-g{color:var(--gold2);font-weight:600;}
+.dc-amen{display:block;margin-top:11px;text-align:center;font-family:'Cinzel Decorative',cursive;font-size:.56rem;letter-spacing:4px;color:var(--gold);opacity:.62;}
+
+/* QUOTE */
+#quote{text-align:center;background:radial-gradient(ellipse at center,rgba(26,42,138,.16),transparent 68%);}
+.qb{max-width:680px;margin:0 auto;padding:44px 26px;position:relative;}
+.bq{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:7.5rem;line-height:.8;color:var(--gold);opacity:.09;position:absolute;}
+.bq.o{top:-5px;left:0;}.bq.c{bottom:-36px;right:0;}
+.q-en{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.05rem,2.2vw,1.5rem);line-height:1.9;color:rgba(248,244,234,.86);position:relative;z-index:1;}
+.q-ur{font-family:'Noto Nastaliq Urdu',serif;font-size:clamp(1.1rem,2.8vw,1.7rem);line-height:2.2;color:var(--gold2);direction:rtl;margin-top:22px;position:relative;z-index:1;}
+.q-attr{margin-top:22px;color:var(--gold);opacity:.58;font-family:'Cinzel Decorative',cursive;font-size:.58rem;letter-spacing:4px;}
+
+/* GALLERY */
+.g-note{text-align:center;font-size:.65rem;letter-spacing:3px;color:rgba(255,255,255,.26);font-family:'Cinzel Decorative',cursive;margin-bottom:30px;}
+.g-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;max-width:860px;margin:0 auto;}
+.gi{position:relative;border-radius:17px;overflow:hidden;aspect-ratio:3/4;border:1.5px solid rgba(240,192,64,.17);box-shadow:0 9px 32px rgba(0,0,0,.38);transition:transform .35s ease,box-shadow .35s,border-color .35s;}
+.gi:nth-child(2){margin-top:30px;}
+.gi img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;display:block;}
+.gi:hover img{transform:scale(1.06);}
+.gi:hover{transform:translateY(-8px);border-color:var(--gold);box-shadow:0 18px 45px rgba(240,192,64,.2);}
+.g-ov{position:absolute;bottom:0;left:0;right:0;padding:18px 15px;background:linear-gradient(transparent,rgba(4,7,26,.86));}
+.g-cap{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;color:var(--gold2);}
+
+/* COUNTDOWN */
+#countdown{text-align:center;}
+.cd-g{display:flex;justify-content:center;gap:15px;flex-wrap:wrap;margin-top:36px;}
+.cd{
+  background:linear-gradient(135deg,rgba(26,42,138,.62),rgba(61,90,254,.18));
+  border:1.5px solid rgba(240,192,64,.36);border-radius:15px;padding:24px 26px;min-width:100px;
+  box-shadow:0 6px 26px rgba(0,0,0,.26);backdrop-filter:blur(7px);
+  position:relative;overflow:hidden;
+}
+.cd::after{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(240,192,64,.06),transparent);animation:cdsh 4.5s ease-in-out infinite;}
+@keyframes cdsh{0%{left:-100%}100%{left:100%}}
+.cd-n{font-family:'Cinzel Decorative',cursive;font-size:2.7rem;color:var(--gold);text-shadow:0 0 20px rgba(240,192,64,.42);line-height:1;}
+.cd-l{font-family:'Cinzel Decorative',cursive;font-size:.5rem;letter-spacing:3px;color:rgba(255,255,255,.48);margin-top:8px;}
+
+/* FOOTER */
+footer{position:relative;z-index:3;text-align:center;padding:62px 22px 42px;background:linear-gradient(0deg,rgba(26,42,138,.25),transparent);border-top:1px solid rgba(240,192,64,.07);}
+.f-bl{font-family:'Noto Nastaliq Urdu',serif;font-size:clamp(1.15rem,2.8vw,1.7rem);color:var(--gold2);direction:rtl;line-height:2.1;text-shadow:0 0 22px rgba(240,192,64,.28);animation:glow 3s ease-in-out infinite alternate;}
+.f-hearts{font-size:1.7rem;margin:16px 0;animation:hb 1.8s ease-in-out infinite;}
+@keyframes hb{0%,100%{transform:scale(1)}50%{transform:scale(1.2)}}
+.f-cr{font-family:'Cinzel Decorative',cursive;font-size:.57rem;letter-spacing:4px;color:rgba(255,255,255,.2);margin-top:20px;}
+.f-nm{color:rgba(240,192,64,.36);font-size:.6rem;margin-top:5px;letter-spacing:3px;font-family:'Cinzel Decorative',cursive;}
+
+/* KEYFRAMES */
+@keyframes fadeInDown{from{opacity:0;transform:translateY(-26px)}to{opacity:1;transform:none}}
+@keyframes fadeInUp  {from{opacity:0;transform:translateY(26px)} to{opacity:1;transform:none}}
+@keyframes fadeIn    {from{opacity:0}to{opacity:1}}
+@keyframes glow{
+  from{text-shadow:0 0 16px rgba(240,192,64,.26),0 0 32px rgba(240,192,64,.1);}
+  to  {text-shadow:0 0 34px rgba(240,192,64,.72),0 0 65px rgba(240,192,64,.35),0 0 105px rgba(240,192,64,.15);}
+}
+
+/* SCROLL REVEAL */
+.rv {opacity:0;transform:translateY(36px);transition:opacity .8s ease,transform .8s ease;}
+.rv.on{opacity:1;transform:none;}
+.rv2{opacity:0;transform:scale(.94);transition:opacity .8s ease,transform .8s ease;}
+.rv2.on{opacity:1;transform:scale(1);}
+
+/* RESPONSIVE */
+@media(max-width:680px){
+  .g-grid{grid-template-columns:1fr;}
+  .gi:nth-child(2){margin-top:0;}
+  .gi:nth-child(3){display:none;}
+  .cd-n{font-size:2.1rem;}.cd{padding:18px 20px;min-width:78px;}
+}
+@media(max-width:900px){
+  .g-grid{grid-template-columns:repeat(2,1fr);}
+  .gi:nth-child(3){display:none;}
+}
+</style>
+</head>
+<body>
+
+<!-- SPLASH -->
+<div id="splash">
+  <div class="sp-rings">
+    <div class="sp-ring L"></div>
+    <div class="sp-ring R"></div>
+    <div class="sp-gem">💍</div>
+  </div>
+  <div class="sp-title">Mubarak Ho</div>
+  <div class="sp-ur">مبارک ہو طلحہ اشفاق</div>
+  <div class="sp-bar"></div>
+</div>
+
+<!-- FLOATS -->
+<div class="floats" id="fl"></div>
+
+<!-- BISMILLAH -->
+<div class="bism">
+  <div class="bism-t">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="h-badge">A Special Celebration</div>
+  <div class="h-mubarak">مبارک ہو! 💍✨</div>
+  <div class="h-sep">
+    <div class="h-line"></div>
+    <svg width="20" height="20" viewBox="0 0 20 20"><polygon points="10,1 12.5,7.5 20,7.5 14,12 16.5,19 10,14 3.5,19 6,12 0,7.5 7.5,7.5" fill="none" stroke="#f0c040" stroke-width="1.2"/></svg>
+    <div class="h-line r"></div>
+  </div>
+  <div class="h-name">Talha Ishfaq</div>
+  <span class="h-amp">&amp;</span>
+  <div class="h-name">Miss Ayesha</div>
+  <div class="h-sep" style="margin-top:15px;">
+    <div class="h-line"></div>
+    <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="6.5" fill="none" stroke="#f0c040" stroke-width="1.2"/><circle cx="8" cy="8" r="2.2" fill="#f0c040" opacity=".42"/></svg>
+    <div class="h-line r"></div>
+  </div>
+  <div class="h-date-pill">
+    <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x="1" y="2" width="11" height="10" rx="2" stroke="#f0c040" stroke-width="1.1"/><path d="M1 5.5h11" stroke="#f0c040" stroke-width="1.1"/><path d="M3.5 1v2.5M9.5 1v2.5" stroke="#f0c040" stroke-width="1.1" stroke-linecap="round"/></svg>
+    <div class="h-date-t">ENGAGEMENT &nbsp;·&nbsp; 28 MAY 2026 &nbsp;·&nbsp; InshAllah</div>
+  </div>
+  <div class="h-rings">
+    <svg width="126" height="66" viewBox="0 0 126 66" fill="none">
+      <defs><filter id="rg"><feGaussianBlur stdDeviation="2.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+      <circle cx="44" cy="33" r="27" stroke="#f0c040" stroke-width="5.2" filter="url(#rg)" opacity=".95"/>
+      <circle cx="82" cy="33" r="27" stroke="#f0c040" stroke-width="5.2" filter="url(#rg)" opacity=".95"/>
+      <circle cx="44" cy="33" r="16" stroke="#ffd97d" stroke-width=".7" fill="rgba(240,192,64,.04)" opacity=".55"/>
+      <circle cx="82" cy="33" r="16" stroke="#ffd97d" stroke-width=".7" fill="rgba(240,192,64,.04)" opacity=".55"/>
+    </svg>
+  </div>
+  <div class="h-scroll">SCROLL<div class="arr"></div><div class="arr"></div><div class="arr"></div></div>
+</section>
+
+<!-- DUAS -->
+<section id="duas">
+  <div class="ey rv">Blessings &amp; Prayers</div>
+  <div class="st-ur rv">دُعائیں 🤲</div>
+  <div class="div"></div>
+  <div class="duas-g">
+    <div class="dc rv">
+      <span class="dc-icon">🌸</span>
+      <p class="dc-txt">اللہ تعالیٰ آپ کی اس <span class="dc-g">نئی زندگی</span> کو خوشیوں، محبت اور برکتوں سے بھر دے۔ آپ کا ہر قدم سعادت کی طرف ہو۔</p>
+      <span class="dc-amen">· آمین ·</span>
+    </div>
+    <div class="dc rv">
+      <span class="dc-icon">💎</span>
+      <p class="dc-txt">آپ دونوں کا رشتہ <span class="dc-g">محبت، وفا اور اعتماد</span> سے پروان چڑھے۔ آپ کا گھر جنت کا باغ بن جائے۔</p>
+      <span class="dc-amen">· آمین ·</span>
+    </div>
+    <div class="dc rv">
+      <span class="dc-icon">🕌</span>
+      <p class="dc-txt">اللہ رب العزت آپ کو <span class="dc-g">دنیا اور آخرت</span> میں ایک دوسرے کا ساتھ عطا فرمائے۔ آپ کی زندگی خیر و عافیت سے بھری ہو۔</p>
+      <span class="dc-amen">· آمین ·</span>
+    </div>
+    <div class="dc rv">
+      <span class="dc-icon">✨</span>
+      <p class="dc-txt">رب کریم آپ کے گھر کو <span class="dc-g">سکون، خوشی اور روشنی</span> کا گہوارہ بنائے۔ ہر دکھ آپ سے دور رہے۔</p>
+      <span class="dc-amen">· آمین ·</span>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section id="quote">
+  <div class="ey rv">Words From The Heart</div>
+  <div class="st rv">A Message For You</div>
+  <div class="div"></div>
+  <div class="qb rv2">
+    <span class="bq o">"</span>
+    <p class="q-en">Two hearts, one journey — may your love be the anchor that holds you through every storm, and the wings that carry you to your greatest heights together.</p>
+    <p class="q-ur">محبت وہ دولت ہے جو بانٹنے سے بڑھتی ہے — طلحہ بھائی، آپ کی خوشی ہماری خوشی ہے</p>
+    <span class="bq c">"</span>
+    <div class="q-attr">— With Love &amp; Prayers 💛</div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+
+<!-- COUNTDOWN -->
+<section id="countdown">
+  <div class="ey rv">The Big Day Awaits</div>
+  <div class="st rv">Counting Down!</div>
+  <div class="div"></div>
+  <div class="cd-g rv">
+    <div class="cd"><div class="cd-n" id="cD">00</div><div class="cd-l">Days</div></div>
+    <div class="cd"><div class="cd-n" id="cH">00</div><div class="cd-l">Hours</div></div>
+    <div class="cd"><div class="cd-n" id="cM">00</div><div class="cd-l">Minutes</div></div>
+    <div class="cd"><div class="cd-n" id="cS">00</div><div class="cd-l">Seconds</div></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="f-hearts rv">💛 &nbsp;💍&nbsp; 💛</div>
+  <div class="f-bl rv">اللہ تعالیٰ آپ کو ہمیشہ خوش رکھے — آمین یا رب العالمین 🤲</div>
+  <div class="f-cr rv">Made with ❤️ for</div>
+  <div class="f-nm rv">Talha Ishfaq — From [ Aap Ka Naam ]</div>
+</footer>
+
+<script>
+// SPLASH
+window.addEventListener('load',()=>setTimeout(()=>document.getElementById('splash').classList.add('out'),2900));
+
+// FLOATS — max 10 active, very lightweight
+const syms=['💛','✨','🌸','💍','⭐','💫','🌺','💎'];
+const fl=document.getElementById('fl');
+function spawnF(){
+  if(fl.children.length>=10)return;
+  const e=document.createElement('div');
+  e.className='f';
+  e.textContent=syms[Math.floor(Math.random()*syms.length)];
+  e.style.left=Math.random()*100+'vw';
+  const d=Math.random()*13+10;
+  e.style.animationDuration=d+'s';
+  e.style.animationDelay=Math.random()*2+'s';
+  e.style.fontSize=(Math.random()*13+8)+'px';
+  fl.appendChild(e);
+  setTimeout(()=>e.remove(),(d+2.5)*1000);
+}
+for(let i=0;i<7;i++)setTimeout(spawnF,i*700);
+setInterval(spawnF,2800);
+
+// SCROLL REVEAL
+const io=new IntersectionObserver(en=>en.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on');}),{threshold:.1});
+document.querySelectorAll('.rv,.rv2').forEach(el=>io.observe(el));
+
+// COUNTDOWN — 28 May 2026
+const T=new Date('2026-05-28T18:00:00');
+function tick(){
+  const diff=T-new Date();
+  if(diff<=0){['cD','cH','cM','cS'].forEach(id=>document.getElementById(id).textContent='00');return;}
+  document.getElementById('cD').textContent=String(Math.floor(diff/864e5)).padStart(2,'0');
+  document.getElementById('cH').textContent=String(Math.floor(diff%864e5/36e5)).padStart(2,'0');
+  document.getElementById('cM').textContent=String(Math.floor(diff%36e5/6e4)).padStart(2,'0');
+  document.getElementById('cS').textContent=String(Math.floor(diff%6e4/1e3)).padStart(2,'0');
+}
+tick();setInterval(tick,1000);
+</script>
+</body>
+    </html>
